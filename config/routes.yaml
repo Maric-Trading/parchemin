@@ -1,0 +1,4 @@
+parchemin_sitemap:
+  path:       /sitemap.xml
+  controller: MaricTrading\Parchemin\Controller\SitemapController::index
+  methods:    GET|HEAD

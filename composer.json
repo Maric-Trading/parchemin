@@ -1,0 +1,18 @@
+{
+  "name": "maric-trading/parchemin",
+  "description": "description",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "eric",
+      "email": "eric@simpleclinic.net"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "MaricTrading\\Parchemin\\": "src/"
+    }
+  }
+}
