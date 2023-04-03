@@ -18,4 +18,51 @@ class Page {
     protected string $content;
     #[ORM\Column(type: 'string', length: 255)]
     protected string $slug;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getContent(): string
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param string $content
+     * @return Page
+     */
+    public function setContent(string $content): Page
+    {
+        $this->content = $content;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug(): string
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     * @return Page
+     */
+    public function setSlug(string $slug): Page
+    {
+        $this->slug = $slug;
+        return $this;
+    }
+
+
 }

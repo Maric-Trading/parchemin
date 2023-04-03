@@ -11,3 +11,4 @@ services:
     public: true
     arguments:
       $pageRepository: '@MaricTrading\Parchemin\Repository\PageRepository'
+      $twig: '@twig'
