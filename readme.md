@@ -1,11 +1,11 @@
 
 ## Why? ##
 
-I got sick of always having to write a basic static page controller and template for every new project. So I made this bundle.
+I got sick of always having to write a basic static page controller, page editing functions, and template for every new project. So I made this bundle.
 
-It's called Parchemin because it's a French word for "scroll" or "paper". It's also a reference to the fact that this bundle is super basic and super primitive.  
+It's called Parchemin because it's a French word for "scroll", "paper". or "parchment". It's also a reference to the fact that this bundle is super basic and super primitive... just like parchment. 
 
-If you want CMS functionality, you should use anything else. This is just a simple way to add static pages to your Symfony project.  Ideally like a privacy policy or terms of service page.
+If you want CMS functionality, you should use virtually anything else.  I've heard Sonato or Sylius are good. This is just a simple way to add static pages to your Symfony project.  Ideally like a privacy policy or terms of service page.
 
 1. `composer require maric-trading/parchemin`
 2. Then enable the bundle in the bundles file.  `\MaricTrading\Parchemin\MaricTradingParcheminBundle::class => ['all' => true],`
@@ -36,6 +36,8 @@ maric_trading_parchemin:
 | edit_role | The role required to edit the page. | ROLE_ADMIN |
 | additional_sitemap_routes | An array of additional routes to add to the sitemap. | [] |
 | allow_raw | Allow raw HTML in the page content. | true |
+
+Yes allow_raw defaults to `true`.  You're a developer and I'm assuming you will want html in your static pages.  If that's not cool set `allow_raw` or override the `show.html.twig` and whitelist the tags you want.
 
 
 
