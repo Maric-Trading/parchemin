@@ -1,5 +1,13 @@
 services:
-  MaricTrading\Parchemin\Controller\SitemapController:
+  MaricTrading\Parchemin:
+      public: true
+
+  MaricTrading\Parchemin\Repository\PageRepository:
     public: true
     arguments:
-      - '@twig'
+      $registry: '@doctrine'
+
+  MaricTrading\Parchemin\Controller\PageController:
+    public: true
+    arguments:
+      $pageRepository: '@MaricTrading\Parchemin\Repository\PageRepository'

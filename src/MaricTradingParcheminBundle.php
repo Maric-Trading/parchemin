@@ -25,12 +25,7 @@ class MaricTradingParcheminBundle extends AbstractBundle {
     {
         $definition->rootNode()
             ->children()
-            ->arrayNode('twitter')
-            ->children()
-            ->integerNode('client_id')->end()
-            ->scalarNode('client_secret')->end()
-            ->end()
-            ->end() // twitter
+            ->scalarNode('edit_role')->end()
             ->end()
         ;
     }
@@ -40,24 +35,6 @@ class MaricTradingParcheminBundle extends AbstractBundle {
         $containerConfigurator->import('../config/services.yaml');
 
         $containerConfigurator->parameters()
-            ->set('maric_trading.parchemin.twitter.client_id', $config['twitter']['client_id'])
-            ->set('maric_trading.parchemin.twitter.client_secret', $config['twitter']['client_secret']);
-
-
-       /* $containerConfigurator->services()
-            ->get(ParcheminService::class)
-            ->arg(0, $config['twitter']['client_id'])
-            ->arg(1, $config['twitter']['client_secret'])
-        ;*/
-        // Contrary to the Extension class, the "$config" variable is already merged
-        // and processed. You can use it directly to configure the service container.
-    /*    var_dump($config);
-        var_dump($containerConfigurator->services()->get('maric_trading.parchemin'));
-        die();
-        $containerConfigurator->services()
-            ->get('maric_trading.parchemin.twitter')
-            ->arg(0, $config['twitter']['client_id'])
-            ->arg(1, $config['twitter']['client_secret'])
-        ;*/
+            ->set('maric_trading.parchemin.edit_role', $config['edit_role']);
     }
 }

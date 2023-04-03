@@ -2,3 +2,13 @@ parchemin_sitemap:
   path:       /sitemap.xml
   controller: MaricTrading\Parchemin\Controller\SitemapController::index
   methods:    GET|HEAD
+
+parchemin_edit:
+  path:       /edit/{id}
+  controller: MaricTrading\Parchemin\Controller\PageController::edit
+  methods:    GET|POST
+
+parchemin_show:
+    path:       /{slug}
+    controller: MaricTrading\Parchemin\Controller\PageController::show
+    methods:    GET

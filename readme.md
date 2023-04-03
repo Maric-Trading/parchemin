@@ -8,7 +8,7 @@ It's called Parchemin because it's a French word for "scroll" or "paper". It's a
 If you want CMS functionality, you should use anything else. This is just a simple way to add static pages to your Symfony project.  Ideally like a privacy policy or terms of service page.
 
 
-2. composer require maric-trading/parchemin
+1. composer require maric-trading/parchemin
 
 2. Then enable the bundle in the bundles file.
 
