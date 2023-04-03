@@ -8,7 +8,13 @@ parchemin_edit:
   controller: MaricTrading\Parchemin\Controller\PageController::edit
   methods:    GET|POST
 
+parchemin_new:
+  path:       /new
+  controller: MaricTrading\Parchemin\Controller\PageController::new
+  methods:    GET
+
 parchemin_show:
     path:       /{slug}
     controller: MaricTrading\Parchemin\Controller\PageController::show
     methods:    GET
+

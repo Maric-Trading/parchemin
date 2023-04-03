@@ -17,6 +17,7 @@ services:
       $twig: '@twig'
       $editRole: '%maric_trading.parchemin.edit_role%'
       $allowRaw : '%maric_trading.parchemin.allow_raw%'
+      $security: '@security.helper'
 
   MaricTrading\Parchemin\Controller\SitemapController:
     public: true
