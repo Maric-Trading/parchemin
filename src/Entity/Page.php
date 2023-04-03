@@ -18,6 +18,8 @@ class Page {
     protected string $content;
     #[ORM\Column(type: 'string', length: 255)]
     protected string $slug;
+    #[ORM\Column(type: 'string', length: 255)]
+    protected string $title;
 
     /**
      * @return int
@@ -63,6 +65,26 @@ class Page {
         $this->slug = $slug;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     * @return Page
+     */
+    public function setTitle(string $title): Page
+    {
+        $this->title = $title;
+        return $this;
+    }
+    
+    
 
 
 }
