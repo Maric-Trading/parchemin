@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "maric-trading/trixeditor-bundle": "dev-master"
+    "maric-trading/trixeditor-bundle": "dev-main"
   },
   "autoload": {
     "psr-4": {
