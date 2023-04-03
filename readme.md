@@ -13,5 +13,17 @@ If you want CMS functionality, you should use anything else. This is just a simp
 4. Configure the bundle in the config file `config/packages/maric_trading_parchemin.yaml`
 5. Override the templates if you want to.  And you really should want to.  They're pretty ugly.  Over-ride by adding your own at `templates/bundles/MaricTradingParcheminBundle/page/show.html.twig`
 
+## Configuration ##
+
+There is only really one configuration option at the moment.
+
+```
+maric_trading_parchemin:
+  edit_role: ROLE_ADMIN
+```
+
+| Key | Description | Default |
+| --- | --- | -- |
+| edit_role | The role required to edit the page. | ROLE_ADMIN |
 
 

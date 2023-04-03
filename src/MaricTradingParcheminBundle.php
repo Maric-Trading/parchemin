@@ -35,6 +35,6 @@ class MaricTradingParcheminBundle extends AbstractBundle {
         $containerConfigurator->import('../config/services.yaml');
 
         $containerConfigurator->parameters()
-            ->set('maric_trading.parchemin.edit_role', $config['edit_role']);
+            ->set('maric_trading.parchemin.edit_role', $config['edit_role'] ?? 'ROLE_ADMIN');
     }
 }
