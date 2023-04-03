@@ -12,6 +12,13 @@ If you want CMS functionality, you should use anything else. This is just a simp
 3. Do the database migrations `bin/console doctrine:migrations:migrate`
 4. Configure the bundle in the config file `config/packages/maric_trading_parchemin.yaml`
 5. Override the templates if you want to.  And you really should want to.  They're pretty ugly.  Over-ride by adding your own at `templates/bundles/MaricTradingParcheminBundle/page/show.html.twig`
+6. Don't forget to add the routes to your `config/routes.yaml` file and set a prefix if you want to.
+
+```
+parchemin:
+    resource: '@MaricTradingParcheminBundle/config/routes.yaml'
+    prefix: /page
+```
 
 ## Configuration ##
 
