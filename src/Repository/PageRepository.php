@@ -2,16 +2,25 @@
 
 namespace MaricTrading\Parchemin\Repository;
 
-use App\Entity\Integration;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use MaricTrading\Parchemin\Entity\Page;
 
-class PageRepository extends ServiceEntityRepository {
-    public function __construct(ManagerRegistry $registry)
+class PageRepository extends EntityRepository {
+    public function __construct(EntityManagerInterface $entityManager)
     {
-        parent::__construct($registry, Page::class);
+        parent::__construct($entityManager, $entityManager->getClassMetadata(Page::class));
+    }
+
+    public function save(Page $entity, bool $flush = false): void
+    {
+        $res = $this->getEntityManager()->persist($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
     }
 
 

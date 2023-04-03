@@ -5,10 +5,14 @@ services:
   MaricTrading\Parchemin\Repository\PageRepository:
     public: true
     arguments:
-      $registry: '@doctrine'
+      $entityManager: '@doctrine.orm.default_entity_manager'
 
   MaricTrading\Parchemin\Controller\PageController:
     public: true
+    calls:
+    -   setContainer: [ '@service_container' ] # Without this method call a deprecation is triggered
+    tags: ['controller.service_arguments', 'container.service_subscriber']
     arguments:
       $pageRepository: '@MaricTrading\Parchemin\Repository\PageRepository'
       $twig: '@twig'
+      $editRole: '%maric_trading.parchemin.edit_role%'
