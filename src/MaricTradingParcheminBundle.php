@@ -29,6 +29,7 @@ class MaricTradingParcheminBundle extends AbstractBundle {
                 ->arrayNode('additional_sitemap_routes')
                     ->scalarPrototype()->end()
                 ->end()
+                ->booleanNode('allow_raw')->defaultTrue()
                 ->end()
             ->end()
         ;
@@ -40,6 +41,7 @@ class MaricTradingParcheminBundle extends AbstractBundle {
 
         $containerConfigurator->parameters()
             ->set('maric_trading.parchemin.edit_role', $config['edit_role'] ?? 'ROLE_ADMIN')
-            ->set('maric_trading.parchemin.additional_sitemap_routes', $config['additional_sitemap_routes'] ?? []);
+            ->set('maric_trading.parchemin.additional_sitemap_routes', $config['additional_sitemap_routes'] ?? [])
+            ->set('maric_trading.parchemin.allow_raw', $config['allow_raw'] ?? true);
     }
 }

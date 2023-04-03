@@ -8,7 +8,14 @@
       "email": "eric@simpleclinic.net"
     }
   ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:Maric-Trading/trixeditor-bundle.git"
+    }
+  ],
   "require": {
+    "maric-trading/trixeditor-bundle": "dev-master"
   },
   "autoload": {
     "psr-4": {

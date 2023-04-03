@@ -17,7 +17,12 @@ class PageType extends AbstractType {
         $builder
             ->add('title')
             ->add('slug')
-            ->add('content',TextareaType::class)
+            ->add('content', TrixEditorType::class, [
+                'label' => 'Content',
+                'attr'  => [
+                    'class' => 'trix-content',
+                ],
+            ])
             ->add('save', SubmitType::class, [
                 'label' => 'Save',
                 'attr'  => [

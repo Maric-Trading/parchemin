@@ -16,7 +16,7 @@ use Twig\Environment;
 
 class PageController extends AbstractController
 {
-    public function __construct(private PageRepository $pageRepository, private Environment $twig, private string $editRole)
+    public function __construct(private PageRepository $pageRepository, private Environment $twig, private string $editRole, private bool $allowRaw)
     {
     }
 
@@ -26,7 +26,7 @@ class PageController extends AbstractController
         if (!$page) {
             throw new \Exception("Page not found", 404);
         }
-        return new Response($this->twig->render("@MaricTradingParchemin/page/show.html.twig", ["page" => $page]));
+        return new Response($this->twig->render("@MaricTradingParchemin/page/show.html.twig", ["page" => $page,"allow_raw" => $this->allowRaw]));
     }
 
     public function edit(Page $page, FormFactoryInterface $formFactory, Request $request, Security $security)
@@ -40,6 +40,6 @@ class PageController extends AbstractController
             $this->pageRepository->save($page, true);
             return $this->redirectToRoute("parchemin_edit", ["id" => $page->getId()]);
         }
-        return new Response($this->twig->render("@MaricTradingParchemin/page/edit.html.twig", ["form" => $form->createView(),]));
+        return new Response($this->twig->render("@MaricTradingParchemin/page/edit.html.twig", ["form" => $form->createView()]));
     }
 }
