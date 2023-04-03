@@ -10,9 +10,19 @@ services:
   MaricTrading\Parchemin\Controller\PageController:
     public: true
     calls:
-    -   setContainer: [ '@service_container' ] # Without this method call a deprecation is triggered
+    -   setContainer: [ '@service_container' ]
     tags: ['controller.service_arguments', 'container.service_subscriber']
     arguments:
       $pageRepository: '@MaricTrading\Parchemin\Repository\PageRepository'
       $twig: '@twig'
       $editRole: '%maric_trading.parchemin.edit_role%'
+
+  MaricTrading\Parchemin\Controller\SitemapController:
+    public: true
+    tags: ['controller.service_arguments', 'container.service_subscriber']
+    calls:
+      -   setContainer: [ '@service_container' ]
+    arguments:
+      $pageRepository: '@MaricTrading\Parchemin\Repository\PageRepository'
+      $additionalSitemapRoutes: '%maric_trading.parchemin.additional_sitemap_routes%'
+

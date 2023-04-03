@@ -25,7 +25,11 @@ class MaricTradingParcheminBundle extends AbstractBundle {
     {
         $definition->rootNode()
             ->children()
-            ->scalarNode('edit_role')->end()
+                ->scalarNode('edit_role')->end()
+                ->arrayNode('additional_sitemap_routes')
+                    ->scalarPrototype()->end()
+                ->end()
+                ->end()
             ->end()
         ;
     }
@@ -35,6 +39,7 @@ class MaricTradingParcheminBundle extends AbstractBundle {
         $containerConfigurator->import('../config/services.yaml');
 
         $containerConfigurator->parameters()
-            ->set('maric_trading.parchemin.edit_role', $config['edit_role'] ?? 'ROLE_ADMIN');
+            ->set('maric_trading.parchemin.edit_role', $config['edit_role'] ?? 'ROLE_ADMIN')
+            ->set('maric_trading.parchemin.additional_sitemap_routes', $config['additional_sitemap_routes'] ?? []);
     }
 }

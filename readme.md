@@ -25,5 +25,6 @@ maric_trading_parchemin:
 | Key | Description | Default |
 | --- | --- | -- |
 | edit_role | The role required to edit the page. | ROLE_ADMIN |
+| additional_sitemap_routes | An array of additional routes to add to the sitemap. | [] |
 
 
