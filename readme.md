@@ -22,11 +22,13 @@ parchemin:
 
 ## Configuration ##
 
-There is only really one configuration option at the moment.
+There are three configuration options at the moment.
 
 ```
 maric_trading_parchemin:
   edit_role: ROLE_ADMIN
+  additional_sitemap_routes: []
+  allow_raw: true
 ```
 
 | Key | Description | Default |
@@ -34,5 +36,6 @@ maric_trading_parchemin:
 | edit_role | The role required to edit the page. | ROLE_ADMIN |
 | additional_sitemap_routes | An array of additional routes to add to the sitemap. | [] |
 | allow_raw | Allow raw HTML in the page content. | true |
+
 
 
