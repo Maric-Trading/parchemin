@@ -27,4 +27,5 @@ services:
     arguments:
       $pageRepository: '@MaricTrading\Parchemin\Repository\PageRepository'
       $additionalSitemapRoutes: '%maric_trading.parchemin.additional_sitemap_routes%'
+      $eventDispatcher: '@event_dispatcher'
 
